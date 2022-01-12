@@ -24,4 +24,12 @@ class librosModel extends Model
             return false;
         }
     }
+
+    // regresa la lista de libros
+    function listaLibros(){
+        $libros = librosModel::select('ID', 'Nombre_del_libro', 'Autor', 'Dia', 'Mes', 'Año')
+        ->where('Eliminado', '=', '0')
+        ->get();
+        return $libros;
+    }
 }

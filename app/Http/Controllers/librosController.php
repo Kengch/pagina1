@@ -15,7 +15,8 @@ class librosController extends Controller
 
     //regresa a la vista la lista de personas
     function index(){
-        return view('libros.index');
+        $listaLibros = $this->librosModel->listaLibros();
+        return view('libros.index', array('lista_Libros' => $listaLibros));
     }
 
     //devuelve la vista para crear
